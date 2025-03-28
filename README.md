@@ -15,7 +15,7 @@ Entorno de prueba de [PrestaShop](https://prestashop.es) con Docker Compose.
 3. Acceso a los servicios:
 
     - [PrestaShop Frontend](http://localhost:8080)
-    - [PrestaShop Backend](http://localhost:8080/admin)
+    - [PrestaShop Backend](http://localhost:8080/backend)
     - [phpMyAdmin](http://localhost:8090)
 
 ## Referencias

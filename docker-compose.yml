@@ -13,6 +13,7 @@ services:
       DB_USER: ${MARIADB_USER}
       DB_PASSWD: ${MARIADB_PASSWORD}
       PS_INSTALL_AUTO: 1
+      PS_FOLDER_ADMIN: backend
       PS_DOMAIN: localhost:8080
       PS_LANGUAGE: es
       PS_COUNTRY: ES

@@ -20,11 +20,11 @@ help: _header
 _urls: _header
 	${info }
 	@echo Sitios disponibles:
-	@echo ------------------------------------------------
+	@echo --------------------------------------------------
 	@echo [PrestaShop Frontend] http://localhost:8080
-	@echo [PrestaShop Backend] http://localhost:8080/admin
+	@echo [PrestaShop Backend] http://localhost:8080/backend
 	@echo [phpMyAdmin] http://localhost:8090
-	@echo ------------------------------------------------
+	@echo --------------------------------------------------
 
 _header:
 	@echo ----------
