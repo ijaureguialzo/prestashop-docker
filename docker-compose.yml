@@ -1,0 +1,48 @@
+services:
+
+  prestashop:
+    image: prestashop/prestashop:${PRESTASHOP_VERSION:-latest}
+    platform: linux/amd64
+    depends_on:
+      - mariadb
+    ports:
+      - "8080:80"
+    environment:
+      DB_SERVER: mariadb
+      DB_NAME: ${MARIADB_DATABASE}
+      DB_USER: ${MARIADB_USER}
+      DB_PASSWD: ${MARIADB_PASSWORD}
+      PS_INSTALL_AUTO: 1
+      PS_DOMAIN: localhost:8080
+    volumes:
+      - prestashop_data:/var/www/html
+
+  mariadb:
+    image: mariadb:${MARIADB_VERSION:-latest}
+    environment:
+      - MARIADB_ROOT_PASSWORD=${MARIADB_ROOT_PASSWORD}
+      - MARIADB_DATABASE=${MARIADB_DATABASE}
+      - MARIADB_USER=${MARIADB_USER}
+      - MARIADB_PASSWORD=${MARIADB_PASSWORD}
+      - MARIADB_AUTO_UPGRADE=true
+    expose:
+      - 3306
+    volumes:
+      - mariadb_data:/var/lib/mysql
+
+  phpmyadmin:
+    image: phpmyadmin:${PHPMYADMIN_VERSION:-latest}
+    environment:
+      - PMA_HOST=mariadb
+      - PMA_PORT=3306
+      - PMA_USER=root
+      - PMA_PASSWORD=${MARIADB_ROOT_PASSWORD}
+      - UPLOAD_LIMIT=1g
+    ports:
+      - "8090:80"
+    depends_on:
+      - mariadb
+
+volumes:
+  mariadb_data:
+  prestashop_data:
