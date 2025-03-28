@@ -20,15 +20,16 @@ help: _header
 _urls: _header
 	${info }
 	@echo Sitios disponibles:
-	@echo -----------------------------------------
-	@echo [PrestaShop] http://localhost:8080
+	@echo ------------------------------------------------
+	@echo [PrestaShop Frontend] http://localhost:8080
+	@echo [PrestaShop Backend] http://localhost:8080/admin
 	@echo [phpMyAdmin] http://localhost:8090
-	@echo -----------------------------------------
+	@echo ------------------------------------------------
 
 _header:
-	@echo ---------
+	@echo ----------
 	@echo PrestaShop
-	@echo ---------
+	@echo ----------
 
 _start-command:
 	@docker compose up -d --remove-orphans

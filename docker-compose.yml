@@ -14,6 +14,10 @@ services:
       DB_PASSWD: ${MARIADB_PASSWORD}
       PS_INSTALL_AUTO: 1
       PS_DOMAIN: localhost:8080
+      PS_LANGUAGE: es
+      PS_COUNTRY: ES
+      ADMIN_MAIL: ${PRESTASHOP_ADMIN_MAIL}
+      ADMIN_PASSWD: ${PRESTASHOP_ADMIN_PASSWD}
     volumes:
       - prestashop_data:/var/www/html
 

@@ -3,11 +3,15 @@ PRESTASHOP_VERSION=latest
 MARIADB_VERSION=latest
 PHPMYADMIN_VERSION=latest
 
-# Variables de configuración
+# Variables de configuración de la base de datos
 MARIADB_ROOT_PASSWORD=12345Abcde
 MARIADB_DATABASE=prestashop
 MARIADB_USER=prestashop
 MARIADB_PASSWORD=12345Abcde
+
+# Usuario administrador de PrestaShop
+PRESTASHOP_ADMIN_MAIL=test@test.com
+PRESTASHOP_ADMIN_PASSWD=12345Abcde
 
 # Prefijo para los contenedores
 COMPOSE_PROJECT_NAME=prestashop
